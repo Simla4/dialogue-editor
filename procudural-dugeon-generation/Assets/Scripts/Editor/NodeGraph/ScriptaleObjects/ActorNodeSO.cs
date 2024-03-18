@@ -8,17 +8,17 @@ using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "Room Node", menuName = "ScriptaleObjects/Dungeon Generation/Room Node")]
 
-public class RoomNodeSO : ScriptableObject
+public class ActorNodeSO : ScriptableObject
 {
      public string id;
     
      public List<string> childRoomList = new List<string>();
      public List<string> parentRoomList = new List<string>();
     [HideInInspector] public ActorTypeListSO actorTypeList;
-    [HideInInspector] public RoomNodeGraphSO roomNodeGraph;
-    [HideInInspector] public Dictionary<string, RoomNodeTypeSO> roomNodeTypeDictionary;
+    [FormerlySerializedAs("roomNodeGraph")] [HideInInspector] public ActorNodeGraphSO actorNodeGraph;
+    [HideInInspector] public Dictionary<string, ActorNodeTypeSO> roomNodeTypeDictionary;
 
-    public RoomNodeTypeSO roomNodeType;
+    [FormerlySerializedAs("roomNodeType")] public ActorNodeTypeSO actorNodeType;
 
     #region Editor code
 
@@ -28,13 +28,13 @@ public class RoomNodeSO : ScriptableObject
     [HideInInspector] public bool isLeftClikDragging = false;
     [HideInInspector] public bool isSelected = false;
 
-    public void Initialize(Rect rect, RoomNodeGraphSO roomNodeGraph, RoomNodeTypeSO roomNodeType)
+    public void Initialize(Rect rect, ActorNodeGraphSO actorNodeGraph, ActorNodeTypeSO actorNodeType)
     {
         this.rect = rect;
         this.id = Guid.NewGuid().ToString();
         this.name = "Room Node";
-        this.roomNodeGraph = roomNodeGraph;
-        this.roomNodeType = roomNodeType;
+        this.actorNodeGraph = actorNodeGraph;
+        this.actorNodeType = actorNodeType;
 
         actorTypeList = GameResources.Instance.actorTypeList;
     }
@@ -52,7 +52,7 @@ public class RoomNodeSO : ScriptableObject
 
     public bool IsChildRoomValid(string childID)
     {
-        if (roomNodeGraph.GetRoomNode(childID).roomNodeType.isNone)
+        if (actorNodeGraph.GetRoomNode(childID).actorNodeType.isNone)
             return false;
         if (id == childID)
             return false;
@@ -110,16 +110,16 @@ public class RoomNodeSO : ScriptableObject
         
         EditorGUI.BeginChangeCheck();
 
-        if (parentRoomList.Count > 0 || roomNodeType.isEnterenceRoom)
+        if (parentRoomList.Count > 0 || actorNodeType.isEnterenceRoom)
         {
-            EditorGUILayout.LabelField(roomNodeType.roomNodeTypeName);
+            EditorGUILayout.LabelField(actorNodeType.roomNodeTypeName);
         }
         else
         {
-            var sellected = actorTypeList.roomNodeTypeList.FindIndex(x => x == roomNodeType);
+            var sellected = actorTypeList.roomNodeTypeList.FindIndex(x => x == actorNodeType);
             var sellection = EditorGUILayout.Popup("", sellected, GetRoomNodeTypeToDisplay());
 
-            roomNodeType = actorTypeList.roomNodeTypeList[sellection];
+            actorNodeType = actorTypeList.roomNodeTypeList[sellection];
         }
 
         if(EditorGUI.EndChangeCheck())
@@ -180,7 +180,7 @@ public class RoomNodeSO : ScriptableObject
 
     private void ProcessRightClickDownEvent(Event currentEvent)
     {
-        roomNodeGraph.SetNodeToDrawConnectionLineFrom(node:this, position: currentEvent.mousePosition );
+        actorNodeGraph.SetNodeToDrawConnectionLineFrom(node:this, position: currentEvent.mousePosition );
     }
 
     private void ProcessLeftClickDownEvent()

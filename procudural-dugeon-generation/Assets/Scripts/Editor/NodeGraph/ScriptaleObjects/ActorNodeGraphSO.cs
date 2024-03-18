@@ -2,20 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "Room Node", menuName = "ScriptaleObjects/Dungeon Generation/Room Node Graph")]
-public class RoomNodeGraphSO : ScriptableObject
+public class ActorNodeGraphSO : ScriptableObject
 {
-    [HideInInspector] public RoomNodeTypeSO roomNodeType;
-    [HideInInspector] public List<RoomNodeSO> roomNodeList = new List<RoomNodeSO>();
-    [HideInInspector] public Dictionary<string, RoomNodeSO> roomNodeDictionary = new Dictionary<string, RoomNodeSO>();
+    [FormerlySerializedAs("roomNodeType")] [HideInInspector] public ActorNodeTypeSO actorNodeType;
+    [HideInInspector] public List<ActorNodeSO> roomNodeList = new List<ActorNodeSO>();
+    [HideInInspector] public Dictionary<string, ActorNodeSO> roomNodeDictionary = new Dictionary<string, ActorNodeSO>();
 
 
     #region Editor
 
 #if UNITY_EDITOR
     
-    [HideInInspector] public RoomNodeSO roomNodeToDrawLineFrom = null;
+    [FormerlySerializedAs("roomNodeToDrawLineFrom")] [HideInInspector] public ActorNodeSO actorNodeToDrawLineFrom = null;
     [HideInInspector] public Vector2 linePos;
 
     private void Awake()
@@ -33,9 +34,9 @@ public class RoomNodeGraphSO : ScriptableObject
         }   
     }
 
-    public RoomNodeSO GetRoomNode(string roomNodeID)
+    public ActorNodeSO GetRoomNode(string roomNodeID)
     {
-        if (roomNodeDictionary.TryGetValue(roomNodeID, out RoomNodeSO roomNode))
+        if (roomNodeDictionary.TryGetValue(roomNodeID, out ActorNodeSO roomNode))
         {
             return roomNode;
         }
@@ -43,9 +44,9 @@ public class RoomNodeGraphSO : ScriptableObject
         return null;
     }
 
-    public void SetNodeToDrawConnectionLineFrom(Vector2 position, RoomNodeSO node)
+    public void SetNodeToDrawConnectionLineFrom(Vector2 position, ActorNodeSO node)
     {
-        roomNodeToDrawLineFrom = node;
+        actorNodeToDrawLineFrom = node;
         linePos = position;
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Room Node", menuName = "ScriptaleObjects/Dungeon Generation/Room Node Type")]
 
-public class RoomNodeTypeSO : ScriptableObject
+public class ActorNodeTypeSO : ScriptableObject
 {
     public string roomNodeTypeName;
 
