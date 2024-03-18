@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameResources : MonoBehaviour
 {
     #region Variables
 
-    public RoomNodeTypeListSO roomNodeTypeList;
+    public ActorTypeListSO actorTypeList;
 
     #endregion
 

@@ -14,7 +14,7 @@ public class RoomNodeSO : ScriptableObject
     
      public List<string> childRoomList = new List<string>();
      public List<string> parentRoomList = new List<string>();
-    [HideInInspector] public RoomNodeTypeListSO roomNodeTypeList;
+    [HideInInspector] public ActorTypeListSO actorTypeList;
     [HideInInspector] public RoomNodeGraphSO roomNodeGraph;
     [HideInInspector] public Dictionary<string, RoomNodeTypeSO> roomNodeTypeDictionary;
 
@@ -36,7 +36,7 @@ public class RoomNodeSO : ScriptableObject
         this.roomNodeGraph = roomNodeGraph;
         this.roomNodeType = roomNodeType;
 
-        roomNodeTypeList = GameResources.Instance.roomNodeTypeList;
+        actorTypeList = GameResources.Instance.actorTypeList;
     }
 
     public bool AddChildRoomNodeToRoomNoode(string childID)
@@ -116,10 +116,10 @@ public class RoomNodeSO : ScriptableObject
         }
         else
         {
-            var sellected = roomNodeTypeList.roomNodeTypeList.FindIndex(x => x == roomNodeType);
+            var sellected = actorTypeList.roomNodeTypeList.FindIndex(x => x == roomNodeType);
             var sellection = EditorGUILayout.Popup("", sellected, GetRoomNodeTypeToDisplay());
 
-            roomNodeType = roomNodeTypeList.roomNodeTypeList[sellection];
+            roomNodeType = actorTypeList.roomNodeTypeList[sellection];
         }
 
         if(EditorGUI.EndChangeCheck())
@@ -130,7 +130,7 @@ public class RoomNodeSO : ScriptableObject
 
     private string[] GetRoomNodeTypeToDisplay()
     {
-        var localRoomNodeTypeList = roomNodeTypeList.roomNodeTypeList;
+        var localRoomNodeTypeList = actorTypeList.roomNodeTypeList;
         var roomArray = new string[localRoomNodeTypeList.Count];
 
         for (int i = 0; i < localRoomNodeTypeList.Count; i++)

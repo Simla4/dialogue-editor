@@ -13,7 +13,7 @@ public class RoomNodeGraphEditor : EditorWindow
     private GUIStyle selectedRoomNodeStyle;
 
     private static RoomNodeGraphSO currentRoomNodeGraph;
-    private RoomNodeTypeListSO roomNodeTypeList;
+    private ActorTypeListSO actorTypeList;
     private RoomNodeSO currentRoomNode = null;
 
     private Vector2 graphOffset;
@@ -67,7 +67,7 @@ public class RoomNodeGraphEditor : EditorWindow
         roomNodeStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
         
         //Load room node types
-        roomNodeTypeList = GameResources.Instance.roomNodeTypeList;
+        actorTypeList = GameResources.Instance.actorTypeList;
     }
 
     private void SelectedRoomNodeStyle()
@@ -80,7 +80,7 @@ public class RoomNodeGraphEditor : EditorWindow
         selectedRoomNodeStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
         
         //Load room node types
-        roomNodeTypeList = GameResources.Instance.roomNodeTypeList;
+        actorTypeList = GameResources.Instance.actorTypeList;
     }
     
     /// <summary>
@@ -363,7 +363,7 @@ public class RoomNodeGraphEditor : EditorWindow
 
     private void CreateRoomNode(object mousePosOject)
     {
-        CreateRoomNode(mousePosOject, roomNodeTypeList.roomNodeTypeList.Find(x => x.isNone));
+        CreateRoomNode(mousePosOject, actorTypeList.roomNodeTypeList.Find(x => x.isNone));
     }
 
     private void CreateRoomNode(object mousePosObject, RoomNodeTypeSO roomNodeType)
