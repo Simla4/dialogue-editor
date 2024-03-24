@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
-[CreateAssetMenu(fileName = "Dialogue Node", menuName = "ScriptaleObjects/Dungeon Generation/Room Node List")]
+[CreateAssetMenu(fileName = "Dialogue Node", menuName = "ScriptaleObjects/Dungeon Generation/Actor Node List")]
 public class ActorTypeListSO : ScriptableObject
 {
-    public List<ActorNodeTypeSO> roomNodeTypeList;
+    public List<ActorTypeSO> actorNodeTypeList;
 }

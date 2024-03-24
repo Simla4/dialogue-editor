@@ -4,39 +4,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[CreateAssetMenu(fileName = "Dialogue Node", menuName = "ScriptaleObjects/Dungeon Generation/Room Node Graph")]
+[CreateAssetMenu(fileName = "Dialogue Node", menuName = "ScriptaleObjects/Dungeon Generation/Dialogue Node Graph")]
 public class DialogueNodeGraphSO : ScriptableObject
 {
-    [HideInInspector] public ActorNodeTypeSO actorNodeType;
-    [HideInInspector] public List<DialogueNodeSO> roomNodeList = new List<DialogueNodeSO>();
-    [HideInInspector] public Dictionary<string, DialogueNodeSO> roomNodeDictionary = new Dictionary<string, DialogueNodeSO>();
+    [HideInInspector] public ActorTypeSO actorType;
+    [HideInInspector] public List<DialogueNodeSO> dialogueNodeList = new List<DialogueNodeSO>();
+    [HideInInspector] public Dictionary<string, DialogueNodeSO> dialogueNodeDictionary = new Dictionary<string, DialogueNodeSO>();
 
 
     #region Editor
 
 #if UNITY_EDITOR
     
-    [FormerlySerializedAs("actorNodeToDrawLineFrom")] [FormerlySerializedAs("roomNodeToDrawLineFrom")] [HideInInspector] public DialogueNodeSO dialogueNodeToDrawLineFrom = null;
+    [HideInInspector] public DialogueNodeSO dialogueNodeToDrawLineFrom = null;
     [HideInInspector] public Vector2 linePos;
 
     private void Awake()
     {
-        LoadRoomNodeDictionary();
+        LoadDialogueNodeDictionary();
     }
 
-    public void LoadRoomNodeDictionary()
+    public void LoadDialogueNodeDictionary()
     {
-        roomNodeDictionary.Clear();
+        dialogueNodeDictionary.Clear();
         
-        foreach (var node in roomNodeList)
+        foreach (var node in dialogueNodeList)
         {
-            roomNodeDictionary[node.id] = node;
+            dialogueNodeDictionary[node.id] = node;
         }   
     }
 
-    public DialogueNodeSO GetRoomNode(string roomNodeID)
+    public DialogueNodeSO GetDialogueNode(string dialogueNodeID)
     {
-        if (roomNodeDictionary.TryGetValue(roomNodeID, out DialogueNodeSO roomNode))
+        if (dialogueNodeDictionary.TryGetValue(dialogueNodeID, out DialogueNodeSO roomNode))
         {
             return roomNode;
         }
@@ -52,7 +52,7 @@ public class DialogueNodeGraphSO : ScriptableObject
 
     public void OnValidate()
     {
-        LoadRoomNodeDictionary();
+        LoadDialogueNodeDictionary();
     }
 
 #endif

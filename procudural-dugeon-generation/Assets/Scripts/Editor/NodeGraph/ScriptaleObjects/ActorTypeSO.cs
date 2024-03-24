@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Dialogue Node", menuName = "ScriptaleObjects/Dungeon Generation/Room Node Type")]
+[CreateAssetMenu(fileName = "Dialogue Node", menuName = "ScriptaleObjects/Dungeon Generation/Actor Type")]
 
-public class ActorNodeTypeSO : ScriptableObject
+public class ActorTypeSO : ScriptableObject
 {
     public string roomNodeTypeName;
 

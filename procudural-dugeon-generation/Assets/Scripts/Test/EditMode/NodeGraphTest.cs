@@ -9,7 +9,7 @@ public class NodeGraphTest
     [Test]
     public void NodeGraphTestSimplePasses()
     {
-        var noneNode = GameResources.Instance.actorTypeList.roomNodeTypeList.Find(x => x.isNone);
+        var noneNode = GameResources.Instance.actorTypeList.actorNodeTypeList.Find(x => x.isNone);
         Assert.NotNull(noneNode);
 
     }

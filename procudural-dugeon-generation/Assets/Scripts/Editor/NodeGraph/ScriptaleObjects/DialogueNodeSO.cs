@@ -6,19 +6,19 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 
-[CreateAssetMenu(fileName = "Dialogue Node", menuName = "ScriptaleObjects/Dungeon Generation/Room Node")]
+[CreateAssetMenu(fileName = "Dialogue Node", menuName = "ScriptaleObjects/Dungeon Generation/Dialogue Node")]
 
 public class DialogueNodeSO : ScriptableObject
 {
      public string id;
     
-     public List<string> childRoomList = new List<string>();
-     public List<string> parentRoomList = new List<string>();
+    public List<string> childDialogueList = new List<string>();
+    public List<string> parentDialogueList = new List<string>();
     [HideInInspector] public ActorTypeListSO actorTypeList;
-    [FormerlySerializedAs("actorNodeGraph")] [FormerlySerializedAs("roomNodeGraph")] [HideInInspector] public DialogueNodeGraphSO dialogueNodeGraph;
-    [HideInInspector] public Dictionary<string, ActorNodeTypeSO> roomNodeTypeDictionary;
+    [HideInInspector] public DialogueNodeGraphSO dialogueNodeGraph;
+    [HideInInspector] public Dictionary<string, ActorTypeSO> roomNodeTypeDictionary;
 
-    [FormerlySerializedAs("roomNodeType")] public ActorNodeTypeSO actorNodeType;
+    public ActorTypeSO actorType;
 
     #region Editor code
 
@@ -28,22 +28,22 @@ public class DialogueNodeSO : ScriptableObject
     [HideInInspector] public bool isLeftClikDragging = false;
     [HideInInspector] public bool isSelected = false;
 
-    public void Initialize(Rect rect, DialogueNodeGraphSO dialogueNodeGraph, ActorNodeTypeSO actorNodeType)
+    public void Initialize(Rect rect, DialogueNodeGraphSO dialogueNodeGraph, ActorTypeSO actorType)
     {
         this.rect = rect;
         this.id = Guid.NewGuid().ToString();
         this.name = "Room Node";
         this.dialogueNodeGraph = dialogueNodeGraph;
-        this.actorNodeType = actorNodeType;
+        this.actorType = actorType;
 
         actorTypeList = GameResources.Instance.actorTypeList;
     }
 
-    public bool AddChildRoomNodeToRoomNoode(string childID)
+    public bool AddChildDialogueNodeToDialogueNode(string childID)
     {
         if (IsChildRoomValid(childID))
         {
-            childRoomList.Add(childID);
+            childDialogueList.Add(childID);
             return true;
         }
 
@@ -52,54 +52,54 @@ public class DialogueNodeSO : ScriptableObject
 
     public bool IsChildRoomValid(string childID)
     {
-        if (dialogueNodeGraph.GetRoomNode(childID).actorNodeType.isNone)
+        if (dialogueNodeGraph.GetDialogueNode(childID).actorType.isNone)
             return false;
         if (id == childID)
             return false;
-        if (childRoomList.Contains(childID))
+        if (childDialogueList.Contains(childID))
             return false;
-        if (parentRoomList.Contains(childID))
+        if (parentDialogueList.Contains(childID))
             return false;
         
         return true;
     }
 
-    public bool AddParentRoomNodeToRoomNode(string parentID)
+    public bool AddParentDialogueNodeToDialogueNode(string parentID)
     {
-        if(IsParentRoomValid(parentID))
+        if(IsParentDialogueValid(parentID))
         {
-            parentRoomList.Add(parentID);
+            parentDialogueList.Add(parentID);
             return true;
         }
 
         return false;
     }
 
-    public bool RemoveChildRoomNodeIDFromNode(string childID)
+    public bool RemoveChildDialogueNodeIDFromNode(string childID)
     {
-        if (childRoomList.Contains(childID))
+        if (childDialogueList.Contains(childID))
         {
-            childRoomList.Remove(childID);
+            childDialogueList.Remove(childID);
             return true;
         }
 
         return false;
     }
     
-    public bool RemoveParentRoomNodeIDFromNode(string parentID)
+    public bool RemoveParentDialogueNodeIDFromNode(string parentID)
     {
-        if (childRoomList.Contains(parentID))
+        if (childDialogueList.Contains(parentID))
         {
-            childRoomList.Remove(parentID);
+            childDialogueList.Remove(parentID);
             return true;
         }
 
         return false;
     }
 
-    public bool IsParentRoomValid(string parentID)
+    public bool IsParentDialogueValid(string parentID)
     {
-        if (parentRoomList.Contains(parentID))
+        if (parentDialogueList.Contains(parentID))
             return false;
         return true;
     }
@@ -110,16 +110,16 @@ public class DialogueNodeSO : ScriptableObject
         
         EditorGUI.BeginChangeCheck();
 
-        if (parentRoomList.Count > 0 || actorNodeType.isEnterenceRoom)
+        if (parentDialogueList.Count > 0 || actorType.isEnterenceRoom)
         {
-            EditorGUILayout.LabelField(actorNodeType.roomNodeTypeName);
+            EditorGUILayout.LabelField(actorType.roomNodeTypeName);
         }
         else
         {
-            var sellected = actorTypeList.roomNodeTypeList.FindIndex(x => x == actorNodeType);
-            var sellection = EditorGUILayout.Popup("", sellected, GetRoomNodeTypeToDisplay());
+            var sellected = actorTypeList.actorNodeTypeList.FindIndex(x => x == actorType);
+            var sellection = EditorGUILayout.Popup("", sellected, GetDialogueNodeTypeToDisplay());
 
-            actorNodeType = actorTypeList.roomNodeTypeList[sellection];
+            actorType = actorTypeList.actorNodeTypeList[sellection];
         }
 
         if(EditorGUI.EndChangeCheck())
@@ -128,9 +128,9 @@ public class DialogueNodeSO : ScriptableObject
         GUILayout.EndArea();
     }
 
-    private string[] GetRoomNodeTypeToDisplay()
+    private string[] GetDialogueNodeTypeToDisplay()
     {
-        var localRoomNodeTypeList = actorTypeList.roomNodeTypeList;
+        var localRoomNodeTypeList = actorTypeList.actorNodeTypeList;
         var roomArray = new string[localRoomNodeTypeList.Count];
 
         for (int i = 0; i < localRoomNodeTypeList.Count; i++)

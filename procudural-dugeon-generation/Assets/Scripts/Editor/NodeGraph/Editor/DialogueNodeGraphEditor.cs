@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.MPE;
 
-public class DialogueRoomNodeGraphEditor : EditorWindow
+public class DialogueNodeGraphEditor : EditorWindow
 {
     #region Vairables
 
@@ -54,7 +54,7 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
     [MenuItem("Dialogue Node Graph Editor", menuItem = "Window/Dungeon Editor/Dialogue Node Graph Editor")]
     private static void OpenEditorWindow()
     {
-        GetWindow<DialogueRoomNodeGraphEditor>("Dialogue Node Graph Editor");
+        GetWindow<DialogueNodeGraphEditor>("Dialogue Node Graph Editor");
     }
 
     private void NodeStyle()
@@ -90,12 +90,12 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
     public static bool OnDoubleClickedAsset(int instanceID, int line)
     {
         //for load to room type
-        var roomNodeGraph = EditorUtility.InstanceIDToObject(instanceID) as DialogueNodeGraphSO;
+        var dialogueNodeGraph = EditorUtility.InstanceIDToObject(instanceID) as DialogueNodeGraphSO;
 
-        if (roomNodeGraph != null)
+        if (dialogueNodeGraph != null)
         {
             OpenEditorWindow();
-            currentDialogueNodeGraph = roomNodeGraph;
+            currentDialogueNodeGraph = dialogueNodeGraph;
             return true;
         }
 
@@ -117,9 +117,9 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
             
             ProcessEvent(Event.current);
             
-            DrawRoomNodeConnection();
+            DrawDialogueNodeConnection();
 
-            DrawRoomNodes();
+            DrawDialogueNodes();
         }
         
         if(GUI.changed)
@@ -150,20 +150,20 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
         Handles.color = Color.white;
     }
 
-    private void DrawRoomNodeConnection()
+    private void DrawDialogueNodeConnection()
     {
-        var roomNodeDictionary = currentDialogueNodeGraph.roomNodeDictionary;
+        var dialogueNodeDictionary = currentDialogueNodeGraph.dialogueNodeDictionary;
         
-        foreach (var roomNode in currentDialogueNodeGraph.roomNodeList)
+        foreach (var dialogueNode in currentDialogueNodeGraph.dialogueNodeList)
         {
-            var childRoomNode = roomNode.childRoomList;
-            if (childRoomNode.Count > 0)
+            var childDialogueNode = dialogueNode.childDialogueList;
+            if (childDialogueNode.Count > 0)
             {
-                foreach (var ChildRoomNodeID in childRoomNode)
+                foreach (var ChildDialogueNodeID in childDialogueNode)
                 {
-                    if (roomNodeDictionary.ContainsKey(ChildRoomNodeID))
+                    if (dialogueNodeDictionary.ContainsKey(ChildDialogueNodeID))
                     {
-                        DrawConnectionLine(roomNode, roomNodeDictionary[ChildRoomNodeID]);
+                        DrawConnectionLine(dialogueNode, dialogueNodeDictionary[ChildDialogueNodeID]);
                         GUI.changed = true;
                     }
                 }
@@ -233,13 +233,13 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
 
     private DialogueNodeSO IsMouseOverDialogueNode(Event currentEvent)
     {
-        var currentRoomNodeGraphList = currentDialogueNodeGraph.roomNodeList;
+        var currentDialogueNodeGraphList = currentDialogueNodeGraph.dialogueNodeList;
         /* if current mouse position equals whatever node position  */
-        for (int i = currentRoomNodeGraphList.Count - 1; i >= 0; i--)
+        for (int i = currentDialogueNodeGraphList.Count - 1; i >= 0; i--)
         {
-            if (currentRoomNodeGraphList[i].rect.Contains(currentEvent.mousePosition))
+            if (currentDialogueNodeGraphList[i].rect.Contains(currentEvent.mousePosition))
             {
-                return currentRoomNodeGraphList[i];
+                return currentDialogueNodeGraphList[i];
             }
         }
 
@@ -294,9 +294,9 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
     {
         graphDrag = dragDelta;
 
-        for (int i = 0; i < currentDialogueNodeGraph.roomNodeList.Count; i++)
+        for (int i = 0; i < currentDialogueNodeGraph.dialogueNodeList.Count; i++)
         {
-            currentDialogueNodeGraph.roomNodeList[i].DragNode(dragDelta);
+            currentDialogueNodeGraph.dialogueNodeList[i].DragNode(dragDelta);
         }
 
         GUI.changed = true;
@@ -322,16 +322,16 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
 
     private void ProceesMouseUpEvent(Event currentEvent)
     {
-        var roomNodeToDrawLineFrom = currentDialogueNodeGraph.dialogueNodeToDrawLineFrom;
-        if (currentEvent.button == 1 && roomNodeToDrawLineFrom != null)
+        var dialogueNodeToDrawLineFrom = currentDialogueNodeGraph.dialogueNodeToDrawLineFrom;
+        if (currentEvent.button == 1 && dialogueNodeToDrawLineFrom != null)
         {
-            var roomNode = IsMouseOverDialogueNode(currentEvent);
+            var dialogueNodeSo = IsMouseOverDialogueNode(currentEvent);
 
-            if (roomNode != null)
+            if (dialogueNodeSo != null)
             {
-                if (roomNodeToDrawLineFrom.AddChildRoomNodeToRoomNoode(roomNode.id))
+                if (dialogueNodeToDrawLineFrom.AddChildDialogueNodeToDialogueNode(dialogueNodeSo.id))
                 {
-                    roomNode.AddParentRoomNodeToRoomNode(roomNodeToDrawLineFrom.id);
+                    dialogueNodeSo.AddParentDialogueNodeToDialogueNode(dialogueNodeToDrawLineFrom.id);
                 }
             }
 
@@ -349,12 +349,12 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
     {
         GenericMenu menu = new GenericMenu();
         
-        menu.AddItem(new GUIContent("Create Room Node"), false, CreateDialogueNode, mousePosition);
+        menu.AddItem(new GUIContent("Create Dialogue Node"), false, CreateDialogueNode, mousePosition);
         menu.AddSeparator("");
-        menu.AddItem(new GUIContent("Select All Room Nodes"), false, SelectAllDialogueNodes);
+        menu.AddItem(new GUIContent("Select All Dialogue Nodes"), false, SelectAllDialogueNodes);
         menu.AddSeparator("");
-        menu.AddItem(new GUIContent("Delete Selected Room Node Links"), false, DeleteSelectedDialogueNodeLinks);
-        menu.AddItem(new GUIContent("Delete Selected Room Node"), false, DeleteSelectedDialogueNode);
+        menu.AddItem(new GUIContent("Delete Selected Dialogue Node Links"), false, DeleteSelectedDialogueNodeLinks);
+        menu.AddItem(new GUIContent("Delete Selected Dialogue Node"), false, DeleteSelectedDialogueNode);
         
         
         //if you right click, show context menu
@@ -363,19 +363,19 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
 
     private void CreateDialogueNode(object mousePosOject)
     {
-        CreateDialogueNode(mousePosOject, actorTypeList.roomNodeTypeList.Find(x => x.isNone));
+        CreateDialogueNode(mousePosOject, actorTypeList.actorNodeTypeList.Find(x => x.isNone));
     }
 
-    private void CreateDialogueNode(object mousePosObject, ActorNodeTypeSO actorNodeType)
+    private void CreateDialogueNode(object mousePosObject, ActorTypeSO actorType)
     {
         var mousePos = (Vector2)mousePosObject;
 
-        var roomNode = ScriptableObject.CreateInstance<DialogueNodeSO>();
+        var dialogueNodeSo = ScriptableObject.CreateInstance<DialogueNodeSO>();
         
-        currentDialogueNodeGraph.roomNodeList.Add(roomNode);
-        roomNode.Initialize(new Rect(mousePos, new Vector2(nodeWidht, nodeHeight)), currentDialogueNodeGraph, actorNodeType);
+        currentDialogueNodeGraph.dialogueNodeList.Add(dialogueNodeSo);
+        dialogueNodeSo.Initialize(new Rect(mousePos, new Vector2(nodeWidht, nodeHeight)), currentDialogueNodeGraph, actorType);
         
-        AssetDatabase.AddObjectToAsset(roomNode, currentDialogueNodeGraph);
+        AssetDatabase.AddObjectToAsset(dialogueNodeSo, currentDialogueNodeGraph);
         AssetDatabase.SaveAssets();
         
         currentDialogueNodeGraph.OnValidate();
@@ -384,17 +384,17 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
     /// <summary>
     /// Draw room nodes in the graph window
     /// </summary>
-    private void DrawRoomNodes()
+    private void DrawDialogueNodes()
     {
-        foreach (var roomNode in currentDialogueNodeGraph.roomNodeList)
+        foreach (var dialogueNodeSo in currentDialogueNodeGraph.dialogueNodeList)
         {
-            if (roomNode.isSelected)
+            if (dialogueNodeSo.isSelected)
             {
-                roomNode.Draw(selectedDialogueNodeStyle);
+                dialogueNodeSo.Draw(selectedDialogueNodeStyle);
             }
             else
             {
-                roomNode.Draw(dialogueNodeStyle);
+                dialogueNodeSo.Draw(dialogueNodeStyle);
             }
         }
 
@@ -403,20 +403,20 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
 
     private void InspectorSelectionChanged()
     {
-        var roomNodeGraph = Selection.activeObject as DialogueNodeGraphSO;
+        var dialogueNodeGraph = Selection.activeObject as DialogueNodeGraphSO;
 
-        if (roomNodeGraph != null)
+        if (dialogueNodeGraph != null)
         {
-            currentDialogueNodeGraph = roomNodeGraph;
+            currentDialogueNodeGraph = dialogueNodeGraph;
             GUI.changed = true;
         }
     }
 
     private void SelectAllDialogueNodes()
     {
-        foreach (var roomNode in currentDialogueNodeGraph.roomNodeList)
+        foreach (var dialogueNodeSo in currentDialogueNodeGraph.dialogueNodeList)
         {
-            roomNode.isSelected = true;
+            dialogueNodeSo.isSelected = true;
         }
 
         GUI.changed = true;
@@ -424,43 +424,43 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
 
     private void DeleteSelectedDialogueNode()
     {
-        Queue<DialogueNodeSO> roomNodeDeletionQueue = new Queue<DialogueNodeSO>();
-        foreach (var roomNode in currentDialogueNodeGraph.roomNodeList)
+        Queue<DialogueNodeSO> dialogueNodeDeletionQueue = new Queue<DialogueNodeSO>();
+        foreach (var dialogueNodeSo in currentDialogueNodeGraph.dialogueNodeList)
         {
-            if (roomNode.isSelected && !roomNode.actorNodeType.isEnterenceRoom)
+            if (dialogueNodeSo.isSelected && !dialogueNodeSo.actorType.isEnterenceRoom)
             {
-                roomNodeDeletionQueue.Enqueue(roomNode);
-                foreach (var childRoomNodeID in roomNode.childRoomList)
+                dialogueNodeDeletionQueue.Enqueue(dialogueNodeSo);
+                foreach (var dialogueNodeID in dialogueNodeSo.childDialogueList)
                 {
-                    var childRoomNode = currentDialogueNodeGraph.GetRoomNode(childRoomNodeID);
+                    var childDialogueNode = currentDialogueNodeGraph.GetDialogueNode(dialogueNodeID);
                     
-                    if (childRoomNode != null)
+                    if (childDialogueNode != null)
                     {
-                        childRoomNode.RemoveParentRoomNodeIDFromNode(roomNode.id);
+                        childDialogueNode.RemoveParentDialogueNodeIDFromNode(dialogueNodeSo.id);
                     }
                 }
 
-                foreach (var parentRoomNodeID in roomNode.parentRoomList)
+                foreach (var parentDialogueNodeID in dialogueNodeSo.parentDialogueList)
                 {
-                    var parentRoomNode = currentDialogueNodeGraph.GetRoomNode(parentRoomNodeID);
+                    var parentDialogueNode = currentDialogueNodeGraph.GetDialogueNode(parentDialogueNodeID);
                     
-                    if (parentRoomNodeID != null)
+                    if (parentDialogueNodeID != null)
                     {
-                        parentRoomNode.RemoveChildRoomNodeIDFromNode(roomNode.id);
+                        parentDialogueNode.RemoveChildDialogueNodeIDFromNode(dialogueNodeSo.id);
                     }
                 }
             }
         }
 
-        while (roomNodeDeletionQueue.Count > 0)
+        while (dialogueNodeDeletionQueue.Count > 0)
         {
-            var roomNodeToDelete = roomNodeDeletionQueue.Dequeue();
+            var dialogueNodeToDelete = dialogueNodeDeletionQueue.Dequeue();
 
-            currentDialogueNodeGraph.roomNodeDictionary.Remove(roomNodeToDelete.id);
-            currentDialogueNodeGraph.roomNodeList.Remove(roomNodeToDelete);
+            currentDialogueNodeGraph.dialogueNodeDictionary.Remove(dialogueNodeToDelete.id);
+            currentDialogueNodeGraph.dialogueNodeList.Remove(dialogueNodeToDelete);
             
             //Remove from the asset database
-            DestroyImmediate(roomNodeToDelete, true);
+            DestroyImmediate(dialogueNodeToDelete, true);
             //Save asset data base
             AssetDatabase.SaveAssets();
         }
@@ -468,19 +468,19 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
 
     private void DeleteSelectedDialogueNodeLinks()
     {
-        foreach (var roomNode in currentDialogueNodeGraph.roomNodeList)
+        foreach (var dialogueNode in currentDialogueNodeGraph.dialogueNodeList)
         {
-            var childRoomList = roomNode.childRoomList;
-            if (roomNode.isSelected && childRoomList.Count > 0)
+            var childDialogueList = dialogueNode.childDialogueList;
+            if (dialogueNode.isSelected && childDialogueList.Count > 0)
             {
-                for (int i = childRoomList.Count - 1; i >= 0; i--)
+                for (int i = childDialogueList.Count - 1; i >= 0; i--)
                 {
-                    var childRoomNode = currentDialogueNodeGraph.GetRoomNode(childRoomList[i]);
+                    var childDialogueNode = currentDialogueNodeGraph.GetDialogueNode(childDialogueList[i]);
 
-                    if (childRoomNode != null && childRoomNode.isSelected)
+                    if (childDialogueNode != null && childDialogueNode.isSelected)
                     {
-                        roomNode.RemoveChildRoomNodeIDFromNode(childRoomNode.id);
-                        childRoomNode.RemoveParentRoomNodeIDFromNode(roomNode.id);
+                        dialogueNode.RemoveChildDialogueNodeIDFromNode(childDialogueNode.id);
+                        childDialogueNode.RemoveParentDialogueNodeIDFromNode(dialogueNode.id);
                     }
                 }
             }
@@ -491,11 +491,11 @@ public class DialogueRoomNodeGraphEditor : EditorWindow
 
     private void ClearAllSelecetedDialogueNodes()
     {
-        foreach (var roomNode in currentDialogueNodeGraph.roomNodeList)
+        foreach (var dialogueNode in currentDialogueNodeGraph.dialogueNodeList)
         {
-            if (roomNode.isSelected)
+            if (dialogueNode.isSelected)
             {
-                roomNode.isSelected = false;
+                dialogueNode.isSelected = false;
                 GUI.changed = true;
             }
         }
