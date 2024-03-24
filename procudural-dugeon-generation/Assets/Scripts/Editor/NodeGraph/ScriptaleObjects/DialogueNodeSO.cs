@@ -6,16 +6,16 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 
-[CreateAssetMenu(fileName = "Room Node", menuName = "ScriptaleObjects/Dungeon Generation/Room Node")]
+[CreateAssetMenu(fileName = "Dialogue Node", menuName = "ScriptaleObjects/Dungeon Generation/Room Node")]
 
-public class ActorNodeSO : ScriptableObject
+public class DialogueNodeSO : ScriptableObject
 {
      public string id;
     
      public List<string> childRoomList = new List<string>();
      public List<string> parentRoomList = new List<string>();
     [HideInInspector] public ActorTypeListSO actorTypeList;
-    [FormerlySerializedAs("roomNodeGraph")] [HideInInspector] public ActorNodeGraphSO actorNodeGraph;
+    [FormerlySerializedAs("actorNodeGraph")] [FormerlySerializedAs("roomNodeGraph")] [HideInInspector] public DialogueNodeGraphSO dialogueNodeGraph;
     [HideInInspector] public Dictionary<string, ActorNodeTypeSO> roomNodeTypeDictionary;
 
     [FormerlySerializedAs("roomNodeType")] public ActorNodeTypeSO actorNodeType;
@@ -28,12 +28,12 @@ public class ActorNodeSO : ScriptableObject
     [HideInInspector] public bool isLeftClikDragging = false;
     [HideInInspector] public bool isSelected = false;
 
-    public void Initialize(Rect rect, ActorNodeGraphSO actorNodeGraph, ActorNodeTypeSO actorNodeType)
+    public void Initialize(Rect rect, DialogueNodeGraphSO dialogueNodeGraph, ActorNodeTypeSO actorNodeType)
     {
         this.rect = rect;
         this.id = Guid.NewGuid().ToString();
         this.name = "Room Node";
-        this.actorNodeGraph = actorNodeGraph;
+        this.dialogueNodeGraph = dialogueNodeGraph;
         this.actorNodeType = actorNodeType;
 
         actorTypeList = GameResources.Instance.actorTypeList;
@@ -52,7 +52,7 @@ public class ActorNodeSO : ScriptableObject
 
     public bool IsChildRoomValid(string childID)
     {
-        if (actorNodeGraph.GetRoomNode(childID).actorNodeType.isNone)
+        if (dialogueNodeGraph.GetRoomNode(childID).actorNodeType.isNone)
             return false;
         if (id == childID)
             return false;
@@ -180,7 +180,7 @@ public class ActorNodeSO : ScriptableObject
 
     private void ProcessRightClickDownEvent(Event currentEvent)
     {
-        actorNodeGraph.SetNodeToDrawConnectionLineFrom(node:this, position: currentEvent.mousePosition );
+        dialogueNodeGraph.SetNodeToDrawConnectionLineFrom(node:this, position: currentEvent.mousePosition );
     }
 
     private void ProcessLeftClickDownEvent()
