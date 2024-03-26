@@ -10,10 +10,11 @@ using UnityEngine.Serialization;
 
 public class DialogueNodeSO : ScriptableObject
 {
-     public string id;
+    public string id;
     
     public List<string> childDialogueList = new List<string>();
     public List<string> parentDialogueList = new List<string>();
+    public String dialogueText;
     [HideInInspector] public ActorTypeListSO actorTypeList;
     [HideInInspector] public DialogueNodeGraphSO dialogueNodeGraph;
     [HideInInspector] public Dictionary<string, ActorTypeSO> roomNodeTypeDictionary;
@@ -38,7 +39,12 @@ public class DialogueNodeSO : ScriptableObject
 
         actorTypeList = GameResources.Instance.actorTypeList;
     }
-
+    
+    /// <summary>
+    /// Add child dialogue node in childDialogueList
+    /// </summary>
+    /// <param name="childID"></param>
+    /// <returns></returns>
     public bool AddChildDialogueNodeToDialogueNode(string childID)
     {
         if (IsChildRoomValid(childID))
@@ -50,6 +56,11 @@ public class DialogueNodeSO : ScriptableObject
         return false;
     }
 
+    /// <summary>
+    /// Querying the conditions for adding as a child dialogue
+    /// </summary>
+    /// <param name="childID"></param>
+    /// <returns></returns>
     public bool IsChildRoomValid(string childID)
     {
         if (dialogueNodeGraph.GetDialogueNode(childID).actorType.isNone)
@@ -63,7 +74,12 @@ public class DialogueNodeSO : ScriptableObject
         
         return true;
     }
-
+    
+    /// <summary>
+    /// Add parant dialogue node in parentDialogueList
+    /// </summary>
+    /// <param name="parentID"></param>
+    /// <returns></returns>
     public bool AddParentDialogueNodeToDialogueNode(string parentID)
     {
         if(IsParentDialogueValid(parentID))
@@ -75,6 +91,11 @@ public class DialogueNodeSO : ScriptableObject
         return false;
     }
 
+    /// <summary>
+    /// Remove child dialogue node in childDialogueList
+    /// </summary>
+    /// <param name="childID"></param>
+    /// <returns></returns>
     public bool RemoveChildDialogueNodeIDFromNode(string childID)
     {
         if (childDialogueList.Contains(childID))
@@ -86,6 +107,11 @@ public class DialogueNodeSO : ScriptableObject
         return false;
     }
     
+    /// <summary>
+    /// remove parent dialogue node in parentDialogueList
+    /// </summary>
+    /// <param name="parentID"></param>
+    /// <returns></returns>
     public bool RemoveParentDialogueNodeIDFromNode(string parentID)
     {
         if (childDialogueList.Contains(parentID))
@@ -97,6 +123,11 @@ public class DialogueNodeSO : ScriptableObject
         return false;
     }
 
+    /// <summary>
+    /// Querying the conditions for adding as a parent dialogue
+    /// </summary>
+    /// <param name="parentID"></param>
+    /// <returns></returns>
     public bool IsParentDialogueValid(string parentID)
     {
         if (parentDialogueList.Contains(parentID))
@@ -104,6 +135,10 @@ public class DialogueNodeSO : ScriptableObject
         return true;
     }
 
+    /// <summary>
+    /// draws the dialog node
+    /// </summary>
+    /// <param name="nodeStyle"></param>
     public void Draw(GUIStyle nodeStyle)
     {
         GUILayout.BeginArea(rect, nodeStyle);
@@ -144,6 +179,7 @@ public class DialogueNodeSO : ScriptableObject
         return roomArray;
     }
 
+    #region Mouse Events
     public void ProcessEvent(Event currentEvent)
     {
         switch (currentEvent.type)
@@ -227,6 +263,8 @@ public class DialogueNodeSO : ScriptableObject
             isLeftClikDragging = false;
         }
     }
+
+    #endregion
 
 #endif
 

@@ -17,6 +17,7 @@ MonoBehaviour:
   - 3cd0fd15-f278-41aa-a1bf-c53444686559
   parentDialogueList:
   - b4c19311-338e-4c95-9d9c-e84004472b22
+  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   actorType: {fileID: 11400000, guid: 71863826594804ae69f08cf4417f00e3, type: 2}
@@ -41,15 +42,18 @@ MonoBehaviour:
   m_Name: Room Node
   m_EditorClassIdentifier: 
   id: 73c281db-964f-48bb-8bef-56b49ea2b568
-  childDialogueList: []
-  parentDialogueList: []
+  childDialogueList:
+  - 3cd0fd15-f278-41aa-a1bf-c53444686559
+  parentDialogueList:
+  - 5ded66d2-4feb-46ad-8ff0-de40a795b7c3
+  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
-  actorType: {fileID: 11400000, guid: 67ed91c485d8d49748b6f56054ca0bfd, type: 2}
+  actorType: {fileID: 11400000, guid: 71863826594804ae69f08cf4417f00e3, type: 2}
   rect:
     serializedVersion: 2
-    x: 465
-    y: 403
+    x: 408
+    y: 354
     width: 160
     height: 75
   isLeftClikDragging: 0
@@ -72,6 +76,7 @@ MonoBehaviour:
   - b4c19311-338e-4c95-9d9c-e84004472b22
   parentDialogueList:
   - 179de3ff-8f84-4cfb-8a8d-460cc75c3965
+  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   actorType: {fileID: 11400000, guid: 71863826594804ae69f08cf4417f00e3, type: 2}
@@ -100,6 +105,7 @@ MonoBehaviour:
   - c37d0d45-13b5-4273-a7e4-99664e56f719
   - 0104e5c4-08ad-43db-afc4-60ed683b5a96
   parentDialogueList: []
+  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
@@ -148,9 +154,11 @@ MonoBehaviour:
   m_Name: Room Node
   m_EditorClassIdentifier: 
   id: 5ded66d2-4feb-46ad-8ff0-de40a795b7c3
-  childDialogueList: []
+  childDialogueList:
+  - 73c281db-964f-48bb-8bef-56b49ea2b568
   parentDialogueList:
   - 0104e5c4-08ad-43db-afc4-60ed683b5a96
+  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   actorType: {fileID: 11400000, guid: 609e365c3c8b14924b91c0abb0245fac, type: 2}
@@ -179,6 +187,7 @@ MonoBehaviour:
   - 5ded66d2-4feb-46ad-8ff0-de40a795b7c3
   parentDialogueList:
   - 179de3ff-8f84-4cfb-8a8d-460cc75c3965
+  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   actorType: {fileID: 11400000, guid: 71863826594804ae69f08cf4417f00e3, type: 2}
@@ -207,6 +216,7 @@ MonoBehaviour:
   - 82a60fc6-96bc-410d-b05f-261633687130
   parentDialogueList:
   - c37d0d45-13b5-4273-a7e4-99664e56f719
+  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   actorType: {fileID: 11400000, guid: 64a35b7e55a4847368f6683333ee4e0b, type: 2}
@@ -235,6 +245,8 @@ MonoBehaviour:
   parentDialogueList:
   - c37d0d45-13b5-4273-a7e4-99664e56f719
   - 82a60fc6-96bc-410d-b05f-261633687130
+  - 73c281db-964f-48bb-8bef-56b49ea2b568
+  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   actorType: {fileID: 11400000, guid: 4c17fff2e8aeb4cab879da8f1c3344c1, type: 2}

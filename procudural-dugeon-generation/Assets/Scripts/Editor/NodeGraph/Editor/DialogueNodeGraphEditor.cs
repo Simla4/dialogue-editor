@@ -57,6 +57,7 @@ public class DialogueNodeGraphEditor : EditorWindow
         GetWindow<DialogueNodeGraphEditor>("Dialogue Node Graph Editor");
     }
 
+    // The style of the dialogue node
     private void NodeStyle()
     {
         dialogueNodeStyle = new GUIStyle();
@@ -70,6 +71,9 @@ public class DialogueNodeGraphEditor : EditorWindow
         actorTypeList = GameResources.Instance.actorTypeList;
     }
 
+    /// <summary>
+    /// The style of the dialogue node we have chosen
+    /// </summary>
     private void SelectedDialogueNodeStyle()
     {
         selectedDialogueNodeStyle = new GUIStyle();
@@ -84,7 +88,7 @@ public class DialogueNodeGraphEditor : EditorWindow
     }
     
     /// <summary>
-    /// Open the room node graph editor window if a room node graph scriptable object asset is double clicked in the inspectoe
+    /// Open the room node graph editor window if a room node graph scriptable object asset is double clicked in the inspector
     /// </summary>
     [OnOpenAsset(0)]
     public static bool OnDoubleClickedAsset(int instanceID, int line)
@@ -126,6 +130,12 @@ public class DialogueNodeGraphEditor : EditorWindow
             Repaint();
     }
 
+    /// <summary>
+    /// Draws the background grid view
+    /// </summary>
+    /// <param name="gridSize"></param>
+    /// <param name="gridOpacity"></param>
+    /// <param name="gridColor"></param>
     private void DrawBackgroundGrid(float gridSize, float gridOpacity, Color gridColor)
     {
         var verticalLineCount = Mathf.CeilToInt((position.width + gridSize) / gridSize);
@@ -149,7 +159,10 @@ public class DialogueNodeGraphEditor : EditorWindow
         
         Handles.color = Color.white;
     }
-
+    
+    /// <summary>
+    /// Drawing connections when opening the editor again
+    /// </summary>
     private void DrawDialogueNodeConnection()
     {
         var dialogueNodeDictionary = currentDialogueNodeGraph.dialogueNodeDictionary;
@@ -171,6 +184,11 @@ public class DialogueNodeGraphEditor : EditorWindow
         }
     }
 
+    /// <summary>
+    /// Drawing the connection line between two nodes
+    /// </summary>
+    /// <param name="parentDialogueNode"></param>
+    /// <param name="childDialogueNode"></param>
     public void DrawConnectionLine (DialogueNodeSO parentDialogueNode, DialogueNodeSO childDialogueNode)
     {
         var startPos = parentDialogueNode.rect.center;
@@ -199,6 +217,7 @@ public class DialogueNodeGraphEditor : EditorWindow
         GUI.changed = true;
     }
 
+    
     private void DrawDraggedLine()
     {
         var node = currentDialogueNodeGraph.dialogueNodeToDrawLineFrom;
@@ -231,6 +250,9 @@ public class DialogueNodeGraphEditor : EditorWindow
         }
     }
 
+    /// <summary>
+    /// Is there a node where we left the line?
+    /// </summary>
     private DialogueNodeSO IsMouseOverDialogueNode(Event currentEvent)
     {
         var currentDialogueNodeGraphList = currentDialogueNodeGraph.dialogueNodeList;
@@ -254,7 +276,7 @@ public class DialogueNodeGraphEditor : EditorWindow
                 ProccessMouseDownEvent(currentEvent);
                 break;
             case EventType.MouseDrag:
-                ProccessMouseDragEvent(currentEvent);
+                ProcessMouseDragEvent(currentEvent);
                 break;
             case EventType.MouseUp:
                 ProceesMouseUpEvent(currentEvent);
@@ -265,7 +287,7 @@ public class DialogueNodeGraphEditor : EditorWindow
         }
     }
 
-    private void ProccessMouseDragEvent(Event currentEvent)
+    private void ProcessMouseDragEvent(Event currentEvent)
     {
         if (currentEvent.button == 1)
         {
@@ -339,12 +361,19 @@ public class DialogueNodeGraphEditor : EditorWindow
         }
     }
     
-    
+    /// <summary>
+    /// Dragging the connection line
+    /// </summary>
+    /// <param name="delta"></param>
     private void DragConnecionLine(Vector2 delta)
     {
         currentDialogueNodeGraph.linePos += delta;
     }
 
+    /// <summary>
+    /// Displaying the menu and options that open when we right-click
+    /// </summary>
+    /// <param name="mousePosition"></param>
     private void ShowContextMenu(Vector2 mousePosition)
     {
         GenericMenu menu = new GenericMenu();
@@ -361,6 +390,10 @@ public class DialogueNodeGraphEditor : EditorWindow
         menu.ShowAsContext();
     }
 
+    /// <summary>
+    /// Adding a new node to the editor
+    /// </summary>
+    /// <param name="mousePosOject"></param>
     private void CreateDialogueNode(object mousePosOject)
     {
         CreateDialogueNode(mousePosOject, actorTypeList.actorNodeTypeList.Find(x => x.isNone));
@@ -502,7 +535,7 @@ public class DialogueNodeGraphEditor : EditorWindow
     }
     
     /// <summary>
-    /// İf there is no connection, claear the line
+    /// İf there is no connection, clear the line
     /// </summary>
     private void ClearLineDrag()
     {

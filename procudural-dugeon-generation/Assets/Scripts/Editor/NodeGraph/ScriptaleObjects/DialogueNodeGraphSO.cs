@@ -34,11 +34,16 @@ public class DialogueNodeGraphSO : ScriptableObject
         }   
     }
 
+    /// <summary>
+    /// Returns which dialogue node it is according to the id we provide.
+    /// </summary>
+    /// <param name="dialogueNodeID"></param>
+    /// <returns></returns>
     public DialogueNodeSO GetDialogueNode(string dialogueNodeID)
     {
-        if (dialogueNodeDictionary.TryGetValue(dialogueNodeID, out DialogueNodeSO roomNode))
+        if (dialogueNodeDictionary.TryGetValue(dialogueNodeID, out DialogueNodeSO dialogueNode))
         {
-            return roomNode;
+            return dialogueNode;
         }
         
         return null;
