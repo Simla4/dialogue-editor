@@ -14,12 +14,13 @@ public class DialogueNodeSO : ScriptableObject
     
     public List<string> childDialogueList = new List<string>();
     public List<string> parentDialogueList = new List<string>();
-    public String dialogueText;
     [HideInInspector] public ActorTypeListSO actorTypeList;
     [HideInInspector] public DialogueNodeGraphSO dialogueNodeGraph;
     [HideInInspector] public Dictionary<string, ActorTypeSO> roomNodeTypeDictionary;
+    [TextArea(7,10)]
+    public String dialogueText;
 
-    public ActorTypeSO actorType;
+    [HideInInspector]public ActorTypeSO actorType;
 
     #region Editor code
 
