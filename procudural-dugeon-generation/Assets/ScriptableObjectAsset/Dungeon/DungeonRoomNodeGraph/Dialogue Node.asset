@@ -17,18 +17,18 @@ MonoBehaviour:
   - 3cd0fd15-f278-41aa-a1bf-c53444686559
   parentDialogueList:
   - b4c19311-338e-4c95-9d9c-e84004472b22
-  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
   actorType: {fileID: 11400000, guid: 71863826594804ae69f08cf4417f00e3, type: 2}
   rect:
     serializedVersion: 2
     x: 632
-    y: 232
+    y: 231
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &-3372689009379193292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,14 +46,14 @@ MonoBehaviour:
   - 3cd0fd15-f278-41aa-a1bf-c53444686559
   parentDialogueList:
   - 5ded66d2-4feb-46ad-8ff0-de40a795b7c3
-  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
   actorType: {fileID: 11400000, guid: 71863826594804ae69f08cf4417f00e3, type: 2}
   rect:
     serializedVersion: 2
     x: 408
-    y: 354
+    y: 353
     width: 160
     height: 75
   isLeftClikDragging: 0
@@ -76,18 +76,18 @@ MonoBehaviour:
   - b4c19311-338e-4c95-9d9c-e84004472b22
   parentDialogueList:
   - 179de3ff-8f84-4cfb-8a8d-460cc75c3965
-  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
   actorType: {fileID: 11400000, guid: 71863826594804ae69f08cf4417f00e3, type: 2}
   rect:
     serializedVersion: 2
-    x: 409
-    y: 95
+    x: 408
+    y: 94
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &-427354776483736504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,18 +105,18 @@ MonoBehaviour:
   - c37d0d45-13b5-4273-a7e4-99664e56f719
   - 0104e5c4-08ad-43db-afc4-60ed683b5a96
   parentDialogueList: []
-  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
     x: 197
-    y: 93
+    y: 92
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,18 +158,18 @@ MonoBehaviour:
   - 73c281db-964f-48bb-8bef-56b49ea2b568
   parentDialogueList:
   - 0104e5c4-08ad-43db-afc4-60ed683b5a96
-  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
   actorType: {fileID: 11400000, guid: 609e365c3c8b14924b91c0abb0245fac, type: 2}
   rect:
     serializedVersion: 2
     x: 193
-    y: 348
+    y: 347
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &3321585882580962935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,18 +187,18 @@ MonoBehaviour:
   - 5ded66d2-4feb-46ad-8ff0-de40a795b7c3
   parentDialogueList:
   - 179de3ff-8f84-4cfb-8a8d-460cc75c3965
-  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
   actorType: {fileID: 11400000, guid: 71863826594804ae69f08cf4417f00e3, type: 2}
   rect:
     serializedVersion: 2
     x: 194
-    y: 231
+    y: 230
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &4040625668940297846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,18 +216,18 @@ MonoBehaviour:
   - 82a60fc6-96bc-410d-b05f-261633687130
   parentDialogueList:
   - c37d0d45-13b5-4273-a7e4-99664e56f719
-  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
   actorType: {fileID: 11400000, guid: 64a35b7e55a4847368f6683333ee4e0b, type: 2}
   rect:
     serializedVersion: 2
     x: 628
-    y: 92
+    y: 91
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &9013756063304506464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,15 +246,15 @@ MonoBehaviour:
   - c37d0d45-13b5-4273-a7e4-99664e56f719
   - 82a60fc6-96bc-410d-b05f-261633687130
   - 73c281db-964f-48bb-8bef-56b49ea2b568
-  dialogueText: 
   actorTypeList: {fileID: 11400000, guid: 1c8fc2fa1a3644ecfa4fb286099565d1, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
   actorType: {fileID: 11400000, guid: 4c17fff2e8aeb4cab879da8f1c3344c1, type: 2}
   rect:
     serializedVersion: 2
     x: 409
-    y: 235
+    y: 234
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
