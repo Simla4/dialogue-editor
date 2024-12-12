@@ -7,30 +7,16 @@ using UnityEngine;
 
 public class ActorTypeSO : ScriptableObject
 {
-    public string roomNodeTypeName;
+    public string actorName;
+    public string actorDescription;
+    public Sprite actorIcon;
 
     #region Header
     public bool disableInNodeGraphEditor = true;
     #endregion
 
     #region Header
-    public bool isCorridor;
-    #endregion
-
-    #region Header
-    public bool isCorridorNS;
-    #endregion
-
-    #region Header
-    public bool isCorridorEW;
-    #endregion
-
-    #region Header
-    public bool isEnterenceRoom;
-    #endregion
-
-    #region Header
-    public bool isBossRoom;
+    public bool isEnterence;
     #endregion
 
     #region Header
@@ -43,7 +29,7 @@ public class ActorTypeSO : ScriptableObject
 
     private void OnValidate()
     {
-        HelperUtility.ValidateCheckEmptyString(this, nameof(roomNodeTypeName), roomNodeTypeName);
+        HelperUtility.ValidateCheckEmptyString(this, nameof(actorName), actorName);
     }
 
 #endif

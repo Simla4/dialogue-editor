@@ -34,7 +34,7 @@ public class DialogueNodeSO : ScriptableObject
     {
         this.rect = rect;
         this.id = Guid.NewGuid().ToString();
-        this.name = "Room Node";
+        this.name = "Actor Node";
         this.dialogueNodeGraph = dialogueNodeGraph;
         this.actorType = actorType;
 
@@ -146,9 +146,9 @@ public class DialogueNodeSO : ScriptableObject
         
         EditorGUI.BeginChangeCheck();
 
-        if (parentDialogueList.Count > 0 || actorType.isEnterenceRoom)
+        if (parentDialogueList.Count > 0 || actorType.isEnterence)
         {
-            EditorGUILayout.LabelField(actorType.roomNodeTypeName);
+            EditorGUILayout.LabelField(actorType.actorName);
         }
         else
         {
@@ -173,7 +173,7 @@ public class DialogueNodeSO : ScriptableObject
         {
             if (localRoomNodeTypeList[i].disableInNodeGraphEditor)
             {
-                roomArray[i] = localRoomNodeTypeList[i].roomNodeTypeName;
+                roomArray[i] = localRoomNodeTypeList[i].actorName;
             }
         }
 

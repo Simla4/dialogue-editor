@@ -460,7 +460,7 @@ public class DialogueNodeGraphEditor : EditorWindow
         Queue<DialogueNodeSO> dialogueNodeDeletionQueue = new Queue<DialogueNodeSO>();
         foreach (var dialogueNodeSo in currentDialogueNodeGraph.dialogueNodeList)
         {
-            if (dialogueNodeSo.isSelected && !dialogueNodeSo.actorType.isEnterenceRoom)
+            if (dialogueNodeSo.isSelected && !dialogueNodeSo.actorType.isEnterence)
             {
                 dialogueNodeDeletionQueue.Enqueue(dialogueNodeSo);
                 foreach (var dialogueNodeID in dialogueNodeSo.childDialogueList)
