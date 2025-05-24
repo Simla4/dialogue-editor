@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2556385038294681250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 94f51d20-f746-4f6c-b5bb-983b63e6cf82
+  childDialogueList: []
+  parentDialogueList:
+  - 3707208e-8110-4594-b079-1f6ba00b6309
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 752
+    y: 322
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 1
+--- !u!114 &-1728287185444225581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 3707208e-8110-4594-b079-1f6ba00b6309
+  childDialogueList:
+  - 94f51d20-f746-4f6c-b5bb-983b63e6cf82
+  parentDialogueList:
+  - aa3882dd-3365-487b-b917-42b4eeb19784
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 500
+    y: 327
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 1
+--- !u!114 &-845623712264722168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: aa3882dd-3365-487b-b917-42b4eeb19784
+  childDialogueList:
+  - a4a1d318-d1f2-4a74-aa24-96a368b74c2a
+  - 3707208e-8110-4594-b079-1f6ba00b6309
+  parentDialogueList: []
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: "Merhaba, konu\u015Fma ba\u015Flang\u0131c\u0131"
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 148
+    y: 253
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c2de9e5efe045e2bbc877322d500ef, type: 3}
+  m_Name: FirstDialogue
+  m_EditorClassIdentifier: 
+  actorType: {fileID: 0}
+  dialogueNodeList:
+  - {fileID: -845623712264722168}
+  - {fileID: 9202772326733631227}
+  - {fileID: -1728287185444225581}
+  - {fileID: -2556385038294681250}
+  dialogueNodeToDrawLineFrom: {fileID: 0}
+  linePos: {x: 0, y: 0}
+--- !u!114 &9202772326733631227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: a4a1d318-d1f2-4a74-aa24-96a368b74c2a
+  childDialogueList: []
+  parentDialogueList:
+  - aa3882dd-3365-487b-b917-42b4eeb19784
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 471
+    y: 173
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
