@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7dcaee9018745849412f0aaf41f1d2, type: 3}
   m_Name: Enterence
   m_EditorClassIdentifier: 
-  roomNodeTypeName: EnterenceRoom
+  actorName: Berke
+  actorDescription: "Simla'n\u0131n karde\u015Fi"
+  actorIcon: {fileID: 0}
   disableInNodeGraphEditor: 1
-  isCorridor: 0
-  isCorridorNS: 0
-  isCorridorEW: 0
-  isEnterenceRoom: 1
-  isBossRoom: 0
+  isEnterence: 1
   isNone: 0
