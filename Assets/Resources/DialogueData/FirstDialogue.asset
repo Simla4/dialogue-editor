@@ -1,5 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3126338132032822657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 8c25906c-9649-47a0-943c-00fb82f6736e
+  childDialogueList:
+  - bbf4859d-5c66-471a-b2e4-bfd637cea3cc
+  parentDialogueList:
+  - 3707208e-8110-4594-b079-1f6ba00b6309
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: "Ablac\u0131m niye b\xF6yle s\xF6yl\xFCyorsun? Bir sorun mu var?"
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 486
+    y: 327
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 1
 --- !u!114 &-2556385038294681250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,17 +42,18 @@ MonoBehaviour:
   m_Name: Actor Node
   m_EditorClassIdentifier: 
   id: 94f51d20-f746-4f6c-b5bb-983b63e6cf82
-  childDialogueList: []
+  childDialogueList:
+  - 526c8845-4268-4951-a974-532a3cc7dd6f
   parentDialogueList:
   - 3707208e-8110-4594-b079-1f6ba00b6309
   actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
-  dialogueText: 
+  dialogueText: Abla sen yine kavga istiyorsun galiba
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
-    x: 752
-    y: 322
+    x: 493
+    y: 175
     width: 160
     height: 75
   isLeftClikDragging: 0
@@ -43,20 +73,21 @@ MonoBehaviour:
   id: 3707208e-8110-4594-b079-1f6ba00b6309
   childDialogueList:
   - 94f51d20-f746-4f6c-b5bb-983b63e6cf82
+  - 8c25906c-9649-47a0-943c-00fb82f6736e
   parentDialogueList:
   - aa3882dd-3365-487b-b917-42b4eeb19784
   actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
-  dialogueText: 
+  dialogueText: Ne var be ne var
   actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
   rect:
     serializedVersion: 2
-    x: 500
-    y: 327
+    x: 233
+    y: 257
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &-845623712264722168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,8 +111,8 @@ MonoBehaviour:
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
-    x: 148
-    y: 253
+    x: -119
+    y: 183
     width: 160
     height: 75
   isLeftClikDragging: 0
@@ -104,8 +135,39 @@ MonoBehaviour:
   - {fileID: 9202772326733631227}
   - {fileID: -1728287185444225581}
   - {fileID: -2556385038294681250}
+  - {fileID: -3126338132032822657}
+  - {fileID: 9217691888134534752}
+  - {fileID: 1585467789880474806}
   dialogueNodeToDrawLineFrom: {fileID: 0}
   linePos: {x: 0, y: 0}
+--- !u!114 &1585467789880474806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: bbf4859d-5c66-471a-b2e4-bfd637cea3cc
+  childDialogueList: []
+  parentDialogueList:
+  - 8c25906c-9649-47a0-943c-00fb82f6736e
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: "Sa\u011Fol can\u0131m karde\u015Fim"
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 722
+    y: 334
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 1
 --- !u!114 &9202772326733631227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,13 +186,41 @@ MonoBehaviour:
   - aa3882dd-3365-487b-b917-42b4eeb19784
   actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
-  dialogueText: 
+  dialogueText: "Kendi kendime mi konu\u015Fuyorum ben burada"
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
-    x: 471
-    y: 173
+    x: 204
+    y: 103
     width: 160
     height: 75
   isLeftClikDragging: 0
   isSelected: 0
+--- !u!114 &9217691888134534752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 526c8845-4268-4951-a974-532a3cc7dd6f
+  childDialogueList: []
+  parentDialogueList:
+  - 94f51d20-f746-4f6c-b5bb-983b63e6cf82
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: Evet istiyorum
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 724
+    y: 169
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 1

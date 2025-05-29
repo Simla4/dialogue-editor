@@ -206,16 +206,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1493571876}
+      - m_Target: {fileID: 76809464}
         m_TargetAssemblyTypeName: DialogueLoader, Assembly-CSharp
         m_MethodName: LoadDialogueData
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: FirstDialogue
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &19500842
@@ -256,6 +256,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19500839}
   m_CullTransparentMesh: 1
+--- !u!1 &76809459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5720325464337242969, guid: c3e9abdf8148844c8a2fcc7b404a8a15, type: 3}
+  m_PrefabInstance: {fileID: 137208190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &76809464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76809459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfbd334d6cad24dd1bb1849931467748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTxt: {fileID: 4632178867815640628, guid: 679430db8cfb349adad0d6b41dd23dee, type: 3}
+  dialogueContainer: {fileID: 137208191}
 --- !u!1001 &137208190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,7 +443,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4631471227842438973, guid: c3e9abdf8148844c8a2fcc7b404a8a15, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5720325464337242969, guid: c3e9abdf8148844c8a2fcc7b404a8a15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 76809464}
   m_SourcePrefab: {fileID: 100100000, guid: c3e9abdf8148844c8a2fcc7b404a8a15, type: 3}
 --- !u!224 &137208191 stripped
 RectTransform:
@@ -684,7 +706,6 @@ GameObject:
   - component: {fileID: 1493571874}
   - component: {fileID: 1493571873}
   - component: {fileID: 1493571872}
-  - component: {fileID: 1493571876}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -775,20 +796,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1493571876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493571871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfbd334d6cad24dd1bb1849931467748, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueTxt: {fileID: 4632178867815640628, guid: 679430db8cfb349adad0d6b41dd23dee, type: 3}
-  dialogueContainer: {fileID: 137208191}
 --- !u!1 &2125949873
 GameObject:
   m_ObjectHideFlags: 0
