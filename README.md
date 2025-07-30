@@ -1,2 +1,76 @@
-# dialogue-editor
+# 🗨️ Dialogue System for Unity
 
+A modular and extensible **branching dialogue tool** built in Unity using **Custom Editors** and **ScriptableObjects**. Designed for narrative-driven games and prototyping, this system emphasizes **clean architecture**, reusability, and editor usability.
+
+---
+
+## 🔧 Technologies Used
+
+- Unity (Editor scripting, 2D UI)
+- C#
+- ScriptableObjects
+- Event Bus architecture
+- Generic programming
+
+---
+
+## ✨ Features
+
+- 🔁 Branching dialogue with player choices
+- 🛠️ Visual Editor for creating dialogue trees
+- 📦 ScriptableObject-based data architecture
+- 📡 Decoupled logic using an Event Bus
+- 🧩 Easy integration into any Unity project
+- 🔧 Designed to be reusable and scalable
+
+---
+
+## 📁 Folder Structure
+
+Assets/
+│
+
+├── DialogueSystem/
+
+├── Editor/ # Custom editor tools
+
+├── Runtime/ # Dialogue execution scripts
+
+├── Data/ # ScriptableObject types
+
+└── UI/ # Dialogue UI prefab
+
+└── Examples/
+
+└── ExampleScene/ # Sample scene for demonstration
+
+
+---
+
+## 🚀 How to Use
+
+1. Clone or download the repository.
+2. Open the project in Unity.
+3. Navigate to `Tools → Dialogue System → Graph Editor` to open the editor window.
+4. Create a new Dialogue asset via `Create → Dialogue System → Dialogue`.
+5. Use the editor to add dialogue nodes and player choices.
+6. Connect nodes to define flow logic.
+7. Save the asset and test the system in the runtime example scene.
+
+---
+
+## 🔍 Example Usage (Runtime)
+
+```csharp
+public class DialogueStarter : DialogueMonoBehaviour
+{
+    void StartDialogue()
+    {
+        RunDialogue(myDialogueAsset);
+    }
+
+    public override void OnChoiceSelected(int choiceIndex)
+    {
+        // Custom logic based on player selection
+    }
+}
