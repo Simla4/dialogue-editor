@@ -74,3 +74,18 @@ public class DialogueStarter : DialogueMonoBehaviour
         // Custom logic based on player selection
     }
 }
+```
+
+
+---
+
+## 📚 What I Learned
+- Editor scripting for designer-friendly tools
+
+- Decoupled system architecture using event-driven design
+
+- Advanced usage of ScriptableObjects for modularity
+
+- Building reusable, extensible dialogue tools
+
+- Balancing UX and developer experience in custom tool creation
