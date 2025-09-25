@@ -16,9 +16,10 @@ public class DialogueNodeSO : ScriptableObject
     public List<string> parentDialogueList = new List<string>();
     [HideInInspector] public ActorTypeListSO actorTypeList;
     [HideInInspector] public DialogueNodeGraphSO dialogueNodeGraph;
-    [HideInInspector] public Dictionary<string, ActorTypeSO> roomNodeTypeDictionary;
+    [HideInInspector] public Dictionary<string, ActorTypeSO> actorNodeTypeDictionary;
     [TextArea(7,10)]
     public String dialogueText;
+    public List<Actions> actions;
 
     [HideInInspector]public ActorTypeSO actorType;
 
@@ -271,3 +272,11 @@ public class DialogueNodeSO : ScriptableObject
 
     #endregion
 }
+
+[Serializable]
+public class Actions
+{
+    public ActionTypes actionType;
+    public int ActionValue;
+}
+
