@@ -97,12 +97,9 @@ public class DialogueLoader : MonoBehaviour
         for (int i = 0; i < dialogueBoxIndex; i++)
         {
             activeDialogueBoxes[i].gameObject.SetActive(false);
-            
-            Debug.Log("Reseted Dialogue box");
         }
 
         dialogueBoxIndex = 0;
-        Debug.Log("Reseted dialogue Index");
     }
 
     #endregion
