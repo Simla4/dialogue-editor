@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actorName: Simla
   actorDescription: Ana karakters
-  actorIcon: {fileID: 0}
+  actorIcon: {fileID: 21300000, guid: 5c0b921ee673940c9b14063100b9e749, type: 3}
   disableInNodeGraphEditor: 1
   isEnterence: 0
   isNone: 0

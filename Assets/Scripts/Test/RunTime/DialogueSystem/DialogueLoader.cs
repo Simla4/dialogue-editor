@@ -1,16 +1,22 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueLoader : MonoBehaviour
 {
     #region Variables
 
     [SerializeField] private TextMeshProUGUI dialogueTxt;
-    [SerializeField] private Transform dialogueContainer;
+    [SerializeField] private TextMeshProUGUI actorNameTxt;
+    [SerializeField] private Image actorImg;
+    [SerializeField] private GameObject TextBoxParentObject;
 
     private DialogueNodeGraphSO dialogueNodeGraph;
     private DialogueNodeSO dialogueNode;
+    private List<TextMeshProUGUI> activeDialogueBoxes = new List<TextMeshProUGUI>();
+    private int dialogueBoxIndex = 0;
     
     public static Action<string> OnCallDialogueData;
     public static Action OnDialogueEnd;
@@ -33,18 +39,20 @@ public class DialogueLoader : MonoBehaviour
 
     #region OtherMethods
 
-    private void LoadDialogueData(string dialogueId)
+    public void LoadDialogueData(string dialogueId)
     {
         dialogueNodeGraph = DialogueDataManager.Instance.GetDialogue(dialogueId);
         dialogueNode = dialogueNodeGraph.dialogueNodeList[0];
         Debug.Log("dialogue node:" + dialogueNodeGraph + " dialogueNode: " + dialogueNode);
 
-        var textbox = InstantiateTextBox(dialogueNode.actorType.actorName, dialogueNode.dialogueText);
+        var textbox = InstantiateTextBox(dialogueNode.actorType.actorName, dialogueNode.dialogueText, dialogueNode.actorType.actorIcon);
         textbox.name = dialogueNode.id;
     }
 
     private void GetNextDialogueText(string dialogueId)
     {
+        ResetDialogueBoxes();
+        
         var childDialogueList = dialogueNodeGraph.dialogueNodeDictionary[dialogueId].childDialogueList;
 
         if (childDialogueList.Count <= 0)
@@ -56,23 +64,45 @@ public class DialogueLoader : MonoBehaviour
         for (int i = 0; i < childDialogueList.Count; i++)
         {
             var nextDialogue = dialogueNodeGraph.dialogueNodeDictionary[childDialogueList[i]];
-            var textbox = InstantiateTextBox(nextDialogue.actorType.actorName, nextDialogue.dialogueText);
+            var textbox = InstantiateTextBox(nextDialogue.actorType.actorName, nextDialogue.dialogueText, nextDialogue.actorType.actorIcon);
             textbox.name = childDialogueList[i];
         }
     }
 
-    private TextMeshProUGUI InstantiateTextBox(string actorName, string dialogueText)
+    private TextMeshProUGUI InstantiateTextBox(string actorName, string dialogueText, Sprite actorIcon)
     {
-        TextMeshProUGUI textBox = Instantiate(dialogueTxt, dialogueContainer);
-        textBox.text = actorName + ": " + dialogueText;
+        TextMeshProUGUI textBox;
+        
+        if (activeDialogueBoxes.Count > dialogueBoxIndex)
+        {
+            activeDialogueBoxes[dialogueBoxIndex].gameObject.SetActive(true);
+            textBox = activeDialogueBoxes[dialogueBoxIndex];
+        }
+        else
+        {
+            textBox = Instantiate(dialogueTxt, TextBoxParentObject.transform, true);
+            activeDialogueBoxes.Add(textBox);
+        }
+        
+        dialogueBoxIndex++;
+        
+        textBox.text = dialogueText;
+        actorNameTxt.text = actorName;
+        actorImg.sprite = actorIcon;
         return textBox;
     }
 
-    private TextMeshProUGUI InstantiateTextBox(string dialogueText)
+    private void ResetDialogueBoxes()
     {
-        TextMeshProUGUI textBox = Instantiate(dialogueTxt, dialogueContainer);
-        textBox.text =  dialogueText;
-        return textBox;
+        for (int i = 0; i < dialogueBoxIndex; i++)
+        {
+            activeDialogueBoxes[i].gameObject.SetActive(false);
+            
+            Debug.Log("Reseted Dialogue box");
+        }
+
+        dialogueBoxIndex = 0;
+        Debug.Log("Reseted dialogue Index");
     }
 
     #endregion
