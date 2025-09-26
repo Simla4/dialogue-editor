@@ -1,0 +1,310 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8559498878583701524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 9239e03e-b7b4-4d5c-9db8-e9b82acd1134
+  childDialogueList:
+  - a4b2ab93-7e95-4b3c-a04f-daeb5a46994f
+  - 6635f9f4-efd1-42d5-b235-2fb83e25f41a
+  - 541f4684-ec86-4310-aeb5-aa102ec5a952
+  parentDialogueList: []
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: Hello, and welcome to the Dialogue Editor! I'm the guide character
+    in this scene. I'm here to test the dialogue system. Now I'll give you a few
+    options.
+  actions: []
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: -109
+    y: 194
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &-5838907174029245814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: ffca4ead-dc72-4530-877b-59087a2cf4da
+  childDialogueList: []
+  parentDialogueList:
+  - 541f4684-ec86-4310-aeb5-aa102ec5a952
+  - 61b360ca-9978-4c2a-9c24-93763d02e1b1
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: That's it! You can end the dialogue at any time. This demonstrates
+    the flexibility of the system.
+  actions: []
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 370
+    y: 347
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &-3748076043265706285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 2599441e-f0e6-470f-91ad-76fe87851472
+  childDialogueList:
+  - 8188f7fb-9cd4-4800-a2b6-290d16372e0f
+  - 61b360ca-9978-4c2a-9c24-93763d02e1b1
+  parentDialogueList:
+  - a4b2ab93-7e95-4b3c-a04f-daeb5a46994f
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: This dialog system is based on ScriptableObjects and offers a flexible
+    structure that can be divided into different branches. You can call dialogs by
+    ID, trigger events, and easily expand them.
+  actions: []
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 355
+    y: 53
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &-3098880003422807203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 61b360ca-9978-4c2a-9c24-93763d02e1b1
+  childDialogueList:
+  - ffca4ead-dc72-4530-877b-59087a2cf4da
+  parentDialogueList:
+  - 2599441e-f0e6-470f-91ad-76fe87851472
+  - 26cbcf95-d8e9-45fc-8080-964662d388ce
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: Thank you, I have nothing else to wonder about.
+  actions: []
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 615
+    y: 195
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c2de9e5efe045e2bbc877322d500ef, type: 3}
+  m_Name: TutorialDialogue
+  m_EditorClassIdentifier: 
+  actorType: {fileID: 0}
+  dialogueNodeList:
+  - {fileID: -8559498878583701524}
+  - {fileID: 7032977458211904826}
+  - {fileID: 5357709806724566672}
+  - {fileID: 1696247406127139371}
+  - {fileID: -3748076043265706285}
+  - {fileID: 1221843103253415444}
+  - {fileID: -5838907174029245814}
+  - {fileID: 1681423709036696498}
+  - {fileID: -3098880003422807203}
+  dialogueNodeToDrawLineFrom: {fileID: 0}
+  linePos: {x: 0, y: 0}
+--- !u!114 &1221843103253415444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 26cbcf95-d8e9-45fc-8080-964662d388ce
+  childDialogueList:
+  - 8188f7fb-9cd4-4800-a2b6-290d16372e0f
+  - 61b360ca-9978-4c2a-9c24-93763d02e1b1
+  parentDialogueList:
+  - 6635f9f4-efd1-42d5-b235-2fb83e25f41a
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: Great question! When you make a choice, the system automatically
+    calls the next dialog linked to the correct ID. So, your choices actually change
+    the outcome.
+  actions: []
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 361
+    y: 189
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &1681423709036696498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 8188f7fb-9cd4-4800-a2b6-290d16372e0f
+  childDialogueList: []
+  parentDialogueList:
+  - 2599441e-f0e6-470f-91ad-76fe87851472
+  - 26cbcf95-d8e9-45fc-8080-964662d388ce
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: Continue
+  actions: []
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 614
+    y: 90
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &1696247406127139371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: a4b2ab93-7e95-4b3c-a04f-daeb5a46994f
+  childDialogueList:
+  - 2599441e-f0e6-470f-91ad-76fe87851472
+  parentDialogueList:
+  - 9239e03e-b7b4-4d5c-9db8-e9b82acd1134
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: 'Tell me more about this system.
+
+'
+  actions: []
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 114
+    y: 56
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &5357709806724566672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 6635f9f4-efd1-42d5-b235-2fb83e25f41a
+  childDialogueList:
+  - 26cbcf95-d8e9-45fc-8080-964662d388ce
+  parentDialogueList:
+  - 9239e03e-b7b4-4d5c-9db8-e9b82acd1134
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: What happens when I make a choice?
+  actions: []
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 109
+    y: 194
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &7032977458211904826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 541f4684-ec86-4310-aeb5-aa102ec5a952
+  childDialogueList:
+  - ffca4ead-dc72-4530-877b-59087a2cf4da
+  parentDialogueList:
+  - 9239e03e-b7b4-4d5c-9db8-e9b82acd1134
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: Thank you, I have no questions.
+  actions: []
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 110
+    y: 346
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
