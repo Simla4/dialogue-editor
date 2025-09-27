@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b7dcaee9018745849412f0aaf41f1d2, type: 3}
-  m_Name: Admin
+  m_Name: Creator
   m_EditorClassIdentifier: 
   actorName: Admin
   actorDescription: MainCharacter
