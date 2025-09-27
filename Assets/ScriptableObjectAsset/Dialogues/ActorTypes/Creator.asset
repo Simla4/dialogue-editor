@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actorName: Creator
   actorDescription: MainCharacter
-  actorIcon: {fileID: 21300000, guid: 5c0b921ee673940c9b14063100b9e749, type: 3}
+  actorIcon: {fileID: 21300000, guid: dcbe7ac04be6f42cdbddc05c3d5010c3, type: 3}
   disableInNodeGraphEditor: 1
   isEnterence: 1
   isNone: 0

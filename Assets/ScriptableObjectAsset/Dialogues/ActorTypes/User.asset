@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actorName: User
   actorDescription: "Simla'n\u0131n karde\u015Fi"
-  actorIcon: {fileID: -589316354031001511, guid: a0d3fbbc155eb404a87f827b40a48dfe, type: 3}
+  actorIcon: {fileID: 21300000, guid: cb8008bbbd0894ab78d48072bfd25363, type: 3}
   disableInNodeGraphEditor: 1
   isEnterence: 1
   isNone: 0
