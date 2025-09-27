@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9119154832909694778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: b218dc77-644b-4178-b6a3-76385249c07c
+  childDialogueList:
+  - 3b70cbc6-e25b-4917-96b0-9b0ef9a5dba8
+  parentDialogueList:
+  - 354de3ca-c17c-4ba9-af45-0f06ac06f780
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: Give me some life.
+  actions: []
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 134
+    y: 105
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
 --- !u!114 &-8559498878583701524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,8 +57,8 @@ MonoBehaviour:
   actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
   rect:
     serializedVersion: 2
-    x: -109
-    y: 194
+    x: -1056
+    y: 207
     width: 160
     height: 75
   isLeftClikDragging: 0
@@ -58,8 +88,70 @@ MonoBehaviour:
   actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
   rect:
     serializedVersion: 2
-    x: 370
-    y: 347
+    x: -577
+    y: 360
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &-5567763329891989811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 3b70cbc6-e25b-4917-96b0-9b0ef9a5dba8
+  childDialogueList:
+  - 92debe63-19fe-43a9-b0d1-5a7c912f5134
+  parentDialogueList:
+  - b218dc77-644b-4178-b6a3-76385249c07c
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: There you go! I gave you +5 health.
+  actions:
+  - actionType: 1
+    ActionValue: 5
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 410
+    y: 99
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &-4578691702425517066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 679b4260-02f2-45f5-8a04-0b1343993b8a
+  childDialogueList:
+  - 6f5682b5-97c6-49cd-8018-5bb4a4f16526
+  parentDialogueList:
+  - 354de3ca-c17c-4ba9-af45-0f06ac06f780
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: Less my life.
+  actions: []
+  actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 133
+    y: 232
     width: 160
     height: 75
   isLeftClikDragging: 0
@@ -91,8 +183,8 @@ MonoBehaviour:
   actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
   rect:
     serializedVersion: 2
-    x: 355
-    y: 53
+    x: -592
+    y: 66
     width: 160
     height: 75
   isLeftClikDragging: 0
@@ -122,12 +214,12 @@ MonoBehaviour:
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
-    x: 615
-    y: 195
+    x: -332
+    y: 208
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +243,12 @@ MonoBehaviour:
   - {fileID: -5838907174029245814}
   - {fileID: 1681423709036696498}
   - {fileID: -3098880003422807203}
+  - {fileID: 9201769824366862953}
+  - {fileID: -9119154832909694778}
+  - {fileID: -4578691702425517066}
+  - {fileID: -5567763329891989811}
+  - {fileID: 8503672333531892750}
+  - {fileID: 5448503217136711173}
   dialogueNodeToDrawLineFrom: {fileID: 0}
   linePos: {x: 0, y: 0}
 --- !u!114 &1221843103253415444
@@ -180,8 +278,8 @@ MonoBehaviour:
   actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
   rect:
     serializedVersion: 2
-    x: 361
-    y: 189
+    x: -586
+    y: 202
     width: 160
     height: 75
   isLeftClikDragging: 0
@@ -199,7 +297,8 @@ MonoBehaviour:
   m_Name: Actor Node
   m_EditorClassIdentifier: 
   id: 8188f7fb-9cd4-4800-a2b6-290d16372e0f
-  childDialogueList: []
+  childDialogueList:
+  - 354de3ca-c17c-4ba9-af45-0f06ac06f780
   parentDialogueList:
   - 2599441e-f0e6-470f-91ad-76fe87851472
   - 26cbcf95-d8e9-45fc-8080-964662d388ce
@@ -210,8 +309,8 @@ MonoBehaviour:
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
-    x: 614
-    y: 90
+    x: -333
+    y: 103
     width: 160
     height: 75
   isLeftClikDragging: 0
@@ -242,8 +341,8 @@ MonoBehaviour:
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
-    x: 114
-    y: 56
+    x: -833
+    y: 69
     width: 160
     height: 75
   isLeftClikDragging: 0
@@ -272,12 +371,43 @@ MonoBehaviour:
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
-    x: 109
-    y: 194
+    x: -838
+    y: 207
     width: 160
     height: 75
   isLeftClikDragging: 0
   isSelected: 0
+--- !u!114 &5448503217136711173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 92debe63-19fe-43a9-b0d1-5a7c912f5134
+  childDialogueList: []
+  parentDialogueList:
+  - 6f5682b5-97c6-49cd-8018-5bb4a4f16526
+  - 3b70cbc6-e25b-4917-96b0-9b0ef9a5dba8
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: That's it! Now you know you can not only read dialogue but also manipulate
+    the game world. The rest is up to your imagination.
+  actions: []
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 655
+    y: 158
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 1
 --- !u!114 &7032977458211904826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,8 +432,72 @@ MonoBehaviour:
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
-    x: 110
-    y: 346
+    x: -837
+    y: 359
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &8503672333531892750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 6f5682b5-97c6-49cd-8018-5bb4a4f16526
+  childDialogueList:
+  - 92debe63-19fe-43a9-b0d1-5a7c912f5134
+  parentDialogueList:
+  - 679b4260-02f2-45f5-8a04-0b1343993b8a
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: Oh, watch out! I've reduced your health by -5.
+  actions:
+  - actionType: 1
+    ActionValue: -5
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 411
+    y: 234
+    width: 160
+    height: 75
+  isLeftClikDragging: 0
+  isSelected: 0
+--- !u!114 &9201769824366862953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f097971ada3741c6b3692317acb0f22, type: 3}
+  m_Name: Actor Node
+  m_EditorClassIdentifier: 
+  id: 354de3ca-c17c-4ba9-af45-0f06ac06f780
+  childDialogueList:
+  - b218dc77-644b-4178-b6a3-76385249c07c
+  - 679b4260-02f2-45f5-8a04-0b1343993b8a
+  parentDialogueList:
+  - 8188f7fb-9cd4-4800-a2b6-290d16372e0f
+  actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
+  dialogueNodeGraph: {fileID: 11400000}
+  dialogueText: You can also trigger actions in-game, not just talk. Let's try it
+    out.
+  actions: []
+  actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
+  rect:
+    serializedVersion: 2
+    x: -105
+    y: 104
     width: 160
     height: 75
   isLeftClikDragging: 0

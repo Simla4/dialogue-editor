@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7dcaee9018745849412f0aaf41f1d2, type: 3}
   m_Name: Creator
   m_EditorClassIdentifier: 
-  actorName: Admin
+  actorName: Creator
   actorDescription: MainCharacter
   actorIcon: {fileID: 21300000, guid: 5c0b921ee673940c9b14063100b9e749, type: 3}
   disableInNodeGraphEditor: 1
