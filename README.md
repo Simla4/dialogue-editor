@@ -3,6 +3,8 @@
 A modular and extensible **branching dialogue tool** built in Unity using **Custom Editors** and **ScriptableObjects**. Designed for narrative-driven games and prototyping, this system emphasizes **clean architecture**, reusability, and editor usability.
 
 
+https://github.com/user-attachments/assets/1d272c2c-0b72-4af8-a610-844042189968
+
 
 ---
 
