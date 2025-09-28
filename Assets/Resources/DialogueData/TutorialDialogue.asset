@@ -20,9 +20,7 @@ MonoBehaviour:
   actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   dialogueText: Give me some life.
-  actions:
-  - actionType: 1
-    ActionValue: 5
+  actions: []
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
@@ -31,7 +29,7 @@ MonoBehaviour:
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &-8559498878583701524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +114,9 @@ MonoBehaviour:
   actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   dialogueText: There you go! I gave you +5 health.
-  actions: []
+  actions:
+  - actionType: 1
+    ActionValue: 5
   actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
   rect:
     serializedVersion: 2
@@ -125,7 +125,7 @@ MonoBehaviour:
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &-4578691702425517066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,9 +146,7 @@ MonoBehaviour:
   actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   dialogueText: Less my life.
-  actions:
-  - actionType: 1
-    ActionValue: -5
+  actions: []
   actorType: {fileID: 11400000, guid: b1a08e56f3ead40d28ca37c8124209d2, type: 2}
   rect:
     serializedVersion: 2
@@ -157,7 +155,7 @@ MonoBehaviour:
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &-3748076043265706285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +458,9 @@ MonoBehaviour:
   actorTypeList: {fileID: 11400000, guid: 88572d24594fd42569957ab6d019c1ca, type: 2}
   dialogueNodeGraph: {fileID: 11400000}
   dialogueText: Oh, watch out! I've reduced your health by -5.
-  actions: []
+  actions:
+  - actionType: 1
+    ActionValue: -5
   actorType: {fileID: 11400000, guid: 00e1faef816ba4486a516c9e1bd18436, type: 2}
   rect:
     serializedVersion: 2
@@ -469,7 +469,7 @@ MonoBehaviour:
     width: 160
     height: 75
   isLeftClikDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &9201769824366862953
 MonoBehaviour:
   m_ObjectHideFlags: 0
