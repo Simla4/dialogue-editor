@@ -20,6 +20,7 @@ public class DialogueLoader : MonoBehaviour
     
     public static Action<string> OnCallDialogueData;
     public static Action OnDialogueEnd;
+    public static Action<ActionTypes, int> OnCallDialogueAction;
 
     #endregion
 
@@ -28,11 +29,13 @@ public class DialogueLoader : MonoBehaviour
     private void OnEnable()
     {
         OnCallDialogueData += GetNextDialogueText;
+        OnCallDialogueData += CallDialogueAction;
     }
 
     private void OnDisable()
     {
         OnCallDialogueData -= GetNextDialogueText;
+        OnCallDialogueData -= CallDialogueAction;
     }
 
     #endregion
@@ -66,6 +69,16 @@ public class DialogueLoader : MonoBehaviour
             var nextDialogue = dialogueNodeGraph.dialogueNodeDictionary[childDialogueList[i]];
             var textbox = InstantiateTextBox(nextDialogue.actorType.actorName, nextDialogue.dialogueText, nextDialogue.actorType.actorIcon);
             textbox.name = childDialogueList[i];
+        }
+    }
+
+    private void CallDialogueAction(string dialogueId)
+    {
+        var currentActions = dialogueNodeGraph.dialogueNodeDictionary[dialogueId].actions;
+
+        for (int i = 0; i < currentActions.Count; i++)
+        {
+            OnCallDialogueAction?.Invoke(currentActions[i].actionType, currentActions[i].ActionValue);
         }
     }
 
