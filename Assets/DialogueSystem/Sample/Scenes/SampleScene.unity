@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -599,6 +598,7 @@ GameObject:
   - component: {fileID: 1405200994}
   - component: {fileID: 1405200996}
   - component: {fileID: 1405200995}
+  - component: {fileID: 1405200997}
   m_Layer: 5
   m_Name: Edge
   m_TagString: Untagged
@@ -664,6 +664,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405200993}
   m_CullTransparentMesh: 1
+--- !u!114 &1405200997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405200993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351e907f176774190a66d37005e4ab76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 20
+  healthBar: {fileID: 1896706882}
 --- !u!1 &1493571871
 GameObject:
   m_ObjectHideFlags: 0
