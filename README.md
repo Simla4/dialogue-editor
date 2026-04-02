@@ -5,6 +5,7 @@ A modular and extensible **branching dialogue tool** built in Unity using **Cust
 
 https://github.com/user-attachments/assets/1d272c2c-0b72-4af8-a610-844042189968
 
+![DialogueNodes](https://github.com/user-attachments/assets/897bf02f-2470-417a-b5a3-a05adadcd359)
 
 ---
 
