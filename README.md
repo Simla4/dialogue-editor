@@ -1,4 +1,4 @@
-# 🗨️ Dialogue System for Unity
+# Dialogue System for Unity
 
 A modular and extensible **branching dialogue tool** built in Unity using **Custom Editors** and **ScriptableObjects**. Designed for narrative-driven games and prototyping, this system emphasizes **clean architecture**, reusability, and editor usability.
 
@@ -9,7 +9,7 @@ https://github.com/user-attachments/assets/1d272c2c-0b72-4af8-a610-844042189968
 
 ---
 
-## 🔧 Technologies Used
+##  Technologies Used
 
 - Unity (Editor scripting, 2D UI)
 - C#
@@ -19,18 +19,18 @@ https://github.com/user-attachments/assets/1d272c2c-0b72-4af8-a610-844042189968
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🔁 Branching dialogue with player choices
-- 🛠️ Visual Editor for creating dialogue trees
-- 📦 ScriptableObject-based data architecture
-- 📡 Decoupled logic using an Event Bus
-- 🧩 Easy integration into any Unity project
-- 🔧 Designed to be reusable and scalable
+-  Branching dialogue with player choices
+-  Visual Editor for creating dialogue trees
+-  ScriptableObject-based data architecture
+-  Decoupled logic using an Event Bus
+-  Easy integration into any Unity project
+-  Designed to be reusable and scalable
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 Assets/
 │
@@ -52,7 +52,7 @@ Assets/
 
 ---
 
-## 🚀 How to Use
+##  How to Use
 
 1. Clone or download the repository.
 2. Open the project in Unity.
@@ -64,7 +64,7 @@ Assets/
 
 ---
 
-## 🔍 Example Usage (Runtime)
+## Example Usage (Runtime)
 
 ```csharp
 public class DialogueStarter : DialogueMonoBehaviour
@@ -84,7 +84,7 @@ public class DialogueStarter : DialogueMonoBehaviour
 
 ---
 
-## 📚 What I Learned
+## What I Learned
 - Editor scripting for designer-friendly tools
 
 - Decoupled system architecture using event-driven design
